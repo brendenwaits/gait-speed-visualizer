@@ -1,2 +1,5 @@
+# Django #
+
 db.sqlite3
-gsv/__pycache__/
+**/migrations
+**/__pycache__
