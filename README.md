@@ -11,6 +11,7 @@ To get a local copy up and running follow these steps.
 ### Prerequisites
 * Python 3.9.2
 * Django 3.1.7
+* djangorestframwork 3.12.4
 
 ### Installation
 1. Clone the repo
