@@ -12,8 +12,8 @@ router.register(r'gaitmeasurements', views.GaitMeasurementViewSet)
 urlpatterns = [
 
     # /api/
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
 
-    #/api-auth/
-    path('api-auth/', include('rest_framework.urls'))
+    #/api/auth/
+    path('auth/', include('rest_framework.urls'))
 ]
