@@ -12,7 +12,6 @@ To get a local copy up and running follow these steps.
 * Python 3.9.2
 * Django 3.1.7
 * djangorestframwork 3.12.4
-* d3.js 6.6.2
 
 ### Installation
 1. Clone the repo
