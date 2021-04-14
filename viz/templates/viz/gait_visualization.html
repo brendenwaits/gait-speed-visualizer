@@ -1,0 +1,66 @@
+{% extends "viz/base.html" %}
+
+{% block content %}
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function () {
+    var ctx = document.getElementById("myChart").getContext("2d");
+    var url = "http://localhost:8000/api/gaitmeasurements/";
+
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [],
+            datasets: [
+                {
+                    label: "Gait Speed Measurements",
+                    fill: false,
+                    backgroundColor: "rgba(0,0,0,.6)",
+                    borderColor: "rgba(255,165,0,1)",
+                    pointBorderColor: "rgba(0,0,0,1)",
+                    pointBackgroundColor: "#fff",
+                    data: [],
+                }
+            ]
+        },
+        options: {
+            tooltips: {
+                mode: 'index',
+                intersect: false
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+
+    ajax(myChart, url);
+
+    function ajax(chart, url) {
+        var labels = [];
+        var data = [];
+
+        $.getJSON(url, data).done(function(response) {
+            for (i = 0; i < response.results.length; i++) {
+                labels.push((response.results[i]).date);
+                data.push((response.results[i]).speed);
+            }
+
+            chart.data.labels = labels;
+            chart.data.datasets[0].data = data;
+            chart.update();
+        });
+    }
+});
+</script>
+
+{% endblock %}

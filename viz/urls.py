@@ -3,10 +3,10 @@ viz url definitions
 """
 from django.urls import path
 
-from viz.views import GaitMeasurementListView
+from viz.views import GaitVisualizationView
 
 urlpatterns = [
 
     # /
-    path('', GaitMeasurementListView.as_view()),
+    path('', GaitVisualizationView.as_view()),
 ]
