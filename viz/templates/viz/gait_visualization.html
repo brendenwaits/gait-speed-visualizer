@@ -5,7 +5,8 @@
   <canvas id="myChart"></canvas>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
 $(function () {
@@ -29,16 +30,14 @@ $(function () {
             ]
         },
         options: {
-            tooltips: {
-                mode: 'index',
-                intersect: false
-            },
             scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
+                x: {
+                    type: 'time',
+                    time: {
+                        unit: 'day',
+                        tooltipFormat: 'MMM DD'
                     }
-                }]
+                }
             }
         }
     });
@@ -51,8 +50,8 @@ $(function () {
 
         $.getJSON(url, data).done(function(response) {
             for (i = 0; i < response.results.length; i++) {
-                labels.push((response.results[i]).date);
-                data.push((response.results[i]).speed);
+                labels.push(new Date(response.results[i].date));
+                data.push(response.results[i].speed);
             }
 
             chart.data.labels = labels;
