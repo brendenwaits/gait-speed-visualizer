@@ -10,14 +10,30 @@ To get a local copy up and running follow these steps.
 
 ### Prerequisites
 * Python 3.9.2
-* Django 3.1.7
-* djangorestframwork 3.12.4
 
 ### Installation
 1. Clone the repo
-   ```sh
-   git clone git@github.com:brendenwaits/gait-speed-visualizer.git
-   ```
+    ```sh
+    git clone git@github.com:brendenwaits/gait-speed-visualizer.git
+    ```
+
+2. Change into the directory
+    ```sh
+    cd gait-speed-visualizer
+    ```
+
+3. Install neccesary Python packages
+    ```sh
+    python -m pip install -r requirements.txt
+    ```
+
+4. Create the database
+    ```sh
+    python manage.py migrate --run-syncdb
+    ```
 
 ## Usage
-Display data after posting to the api.
+1. Start the server
+```sh
+python manage.py runserver
+```
