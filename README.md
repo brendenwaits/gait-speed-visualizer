@@ -5,6 +5,7 @@ This is a visualization tool build for CS 4605 at Georgia Tech.
 * Python 3.9.2
 * Django 3.1.7
 
+
 ## Getting Started
 To get a local copy up and running follow these steps.
 
@@ -32,14 +33,22 @@ To get a local copy up and running follow these steps.
     python manage.py migrate --run-syncdb
     ```
 
+
 ## Usage
 1. Start the server
     ```sh
     python manage.py runserver
     ```
 
-2. Open http://localhost:8000/api/gaitmeasurements/ in a browser of your choice
+### Adding your own data
+1. Open http://localhost:8000/api/gaitmeasurements/ in a browser of your choice
 
-3. From there you can manually add data, or you can just POST data with HTTP
+2. From there you can manually add data, or you can just POST data with HTTP
 
-4. Go to http://localhost:8000/ to view the visualization
+3. Go to http://localhost:8000/ to view the visualization
+
+### Adding test data
+1. Open a new terminal and run the dummy script
+    ```sh
+    python dummy.py
+    ```
