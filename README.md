@@ -34,6 +34,12 @@ To get a local copy up and running follow these steps.
 
 ## Usage
 1. Start the server
-```sh
-python manage.py runserver
-```
+    ```sh
+    python manage.py runserver
+    ```
+
+2. Open http://localhost:8000/api/gaitmeasurements/ in a browser of your choice
+
+3. From there you can manually add data, or you can just POST data with HTTP
+
+4. Go to http://localhost:8000/ to view the visualization
