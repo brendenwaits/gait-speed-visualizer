@@ -17,3 +17,5 @@ for i in range(100):
 
     x = requests.post(url, data={"speed": speed, "date": date})
     print(x)
+
+print("Done")

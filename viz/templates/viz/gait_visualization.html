@@ -19,32 +19,60 @@ $(function () {
             labels: [],
             datasets: [
                 {
-                    label: "Gait Speed Measurements",
                     fill: false,
                     backgroundColor: "rgba(0,0,0,.6)",
                     borderColor: "rgba(255,165,0,1)",
-                    pointBorderColor: "rgba(0,0,0,1)",
-                    pointBackgroundColor: "#fff",
+                    pointRadius: 4,
+                    pointBackgroundColor: "rgba(0,0,0,.6)",
                     data: [],
+                    tension: 0.2,
                 }
             ]
         },
         options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: "Gait Speed Measurements for the Past 100 Days",
+                    font: {
+                        size: 25,
+                    }
+                },
+                legend: {
+                    display: false,
+                }
+            },
             scales: {
                 x: {
                     type: 'time',
                     time: {
-                        unit: 'day',
-                        tooltipFormat: 'MMM DD'
+                        //unit: 'day',
+                        displayFormats: {
+                            day: 'MM-dd',
+                        },
+                        stepSize: 7,
+                    },
+                    title: {
+                        display: true,
+                        text: 'Date',
+                        font: {
+                            size: 17,
+                        }
+
                     }
                 },
                 y: {
                     suggestedMin: 0,
-                    suggestedMax: 3
-                }
-
-
-            }
+                    suggestedMax: 2,
+                    title: {
+                        display: true,
+                        text: 'Gait Speed (m/s)',
+                        font: {
+                            size: 17,
+                        }
+                    },
+                },
+            },
         }
     });
 
