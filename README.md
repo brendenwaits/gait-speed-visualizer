@@ -1,5 +1,7 @@
 ## About The Project
-This is a visualization tool build for CS 4605 at Georgia Tech.
+This is a visualization tool built for CS 4605 at Georgia Tech.
+
+![alt text](example.png)
 
 ### Built With
 * Python 3.9.2
