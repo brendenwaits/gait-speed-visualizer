@@ -36,7 +36,6 @@ To get a local copy up and running follow these steps.
     ```sh
     python manage.py migrate --run-syncdb
     ```
-5. Update url var in viz/templates/gait_visualization.html to http://localhost:8000/api/gaitmeasurements/
 
 ## Usage
 1. Start the server
